@@ -3,9 +3,12 @@ window.onload = setTimeout(() => {
   const newHeadingContent = heading.innerText.replace(/The /g, "Replaced ");
   heading.innerText = newHeadingContent;
 
-  const replaceAboutDiv = document.querySelector(".about");
-  const newAboutDiv = replaceAboutDiv.innerHTML
-    .replace(/The /g, "Replaced ")
-    .replace(/the /g, "replaced ");
-  replaceAboutDiv.innerHTML = newAboutDiv;
+  const paragraphs = document.querySelectorAll("p");
+  for (let i = 0; i < 2; i++) {
+    const newParagraphs = paragraphs[i].innerHTML
+      .replace(/The /g, "Replaced ")
+      .replace(/the /g, "replaced ");
+    paragraphs[i].innerHTML = newParagraphs;
+    console.log(paragraphs[i].innerHTML);
+  }
 }, 4000);
